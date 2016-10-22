@@ -1,0 +1,35 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  	<display-name>Archetype Created Web Application</display-name>
+	
+	<!-- 如果有其他配置文件，通用加载方法 -->
+	<!-- <context-param>
+	      <param-name>contextConfigLocation</param-name>
+	      <param-value>
+	          classpath:spring-common-config.xml,
+	          classpath:spring-budget-config.xml
+	      </param-value>
+	</context-param> 
+	<listener>  
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	-->
+	
+	<servlet>  
+        <servlet-name>back</servlet-name>  
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class> 
+        <init-param>
+        	<param-name>contextConfigLocation</param-name>
+        	<param-value>classpath*:conf/spring-back-application002.xml</param-value>
+        </init-param> 
+        <load-on-startup>1</load-on-startup>  
+    </servlet>  
+    <servlet-mapping>  
+        <servlet-name>back</servlet-name>  
+        <url-pattern>*.back</url-pattern>  
+    </servlet-mapping>
+    
+</web-app>
